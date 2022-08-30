@@ -123,8 +123,12 @@ function cadastrar() {
                     senha
                 },
                 success: function (result) {
+                    data = JSON.stringify(result)
+                    console.log("aquiiiii")
+                    console.log(data)
+
                     console.log(result)
-                    if (result == 1) {
+                    if (data.status === 1) {
                         Swal.fire('Sucesso!', 'Usuário cadastrado com sucesso!', 'success')
                         setTimeout(function () {
                             window.location.href = './index.php'

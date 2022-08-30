@@ -1,3 +1,9 @@
+<?php
+if (@!$_SESSION['IS_LOGGED']) {
+    header('location: ../index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

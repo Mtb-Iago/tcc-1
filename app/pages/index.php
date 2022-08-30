@@ -1,10 +1,6 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['UsuarioID'])) {
-    header('location: ../../index.php');
-}
-
 include '../../includes/header.php';
 ?>
 

@@ -49,7 +49,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9 mt-4">
-                                    <a href="./backend/cadastrar.php" onclick="fnToggle('cardCadastro', 'cardLogin')">Não tenho uma conta</a>
+                                    <button href="#" onclick="fnToggle('cardCadastro', 'cardLogin')">Não tenho uma conta</button>
                                 </div>
                             </div>
                         </div>

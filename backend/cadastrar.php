@@ -1,5 +1,5 @@
 <?php
-
+@session_start();
 if ($_POST) {
     if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome'])) {
         include './conexao.php';
@@ -10,12 +10,30 @@ if ($_POST) {
 
         $insert = $pdo->prepare("INSERT INTO usuario (nome, login, senha) VALUES ('$nome', '$login', '$senha')");
 
+        $id_user = $pdo->lastInsertId();
         if ($insert->execute()) {
-            echo 1;
-            exit;
+
+            $_SESSION['UsuarioID'] = $id_user;
+            $_SESSION['UsuarioLogin'] = $login
+            $_SESSION['UsuarioNome'] = $nome
+            $_SESSION['IS_LOGGED'] = true;
+
+
+            return json_encode([
+                "status"=> true,
+                "message"=> "Login is Success",
+                "data" => [
+                    "nome"=> $nome,
+                    "email"=> $login,
+                    "id_user"=> $id_user
+                ]
+                ]);
         } else {
-            echo 0;
-            exit;
+            return json_encode([
+                "status"=> false,
+                "message"=> "Login Error",
+                "data" => []
+                ]);
         }
     }
 } else {
