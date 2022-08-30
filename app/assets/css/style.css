@@ -1,0 +1,21 @@
+.form-control {
+    border-radius: 20px;
+}
+
+.tabela {
+    height: 450px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.row {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
